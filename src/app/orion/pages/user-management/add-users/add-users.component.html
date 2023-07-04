@@ -12,64 +12,62 @@
               <div class="field mb-4 col-12"><label for="nickname"
                                                     class="font-medium text-900">Username</label><input
                 id="nickname" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
-              <div class="field mb-4 col-12"><label  class="font-medium text-900">Avatar</label>
-                <!--                <p-fileupload mode="basic" name="avatar" url="./upload.php" accept="image/*"-->
-                <!--                              styleclass="p-button-outlined p-button-plain" chooselabel="Upload Image"-->
-                <!--                              class="p-element">&lt;!&ndash;&ndash;&gt;-->
-                <!--                  <div class="p-fileupload p-fileupload-basic p-component ng-star-inserted">-->
-                <!--                    <p-messages class="p-element ng-tns-c42-101 ng-star-inserted">-->
-                <!--                      <div role="alert" class="p-messages p-component ng-tns-c42-101">&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;&lt;!&ndash;&ndash;&gt;-->
-                <!--                        &lt;!&ndash;&ndash;&gt;</div>-->
-                <!--                    </p-messages>-->
-                <!--                    <span tabindex="0" pripple=""-->
-                <!--                          class="p-ripple p-element p-button-outlined p-button-plain p-button p-component p-fileupload-choose"><span-->
-                <!--                      class="p-button-icon p-button-icon-left pi pi-plus"></span><span-->
-                <!--                      class="p-button-label ng-star-inserted">Upload Image</span>&lt;!&ndash;&ndash;&gt;<input type="file"-->
-                <!--                                                                                               accept="image/*"-->
-                <!--                                                                                               class="ng-star-inserted">-->
-                <!--                      &lt;!&ndash;&ndash;&gt;<span class="p-ink"></span></span></div>&lt;!&ndash;&ndash;&gt;</p-fileupload>-->
-              </div>
-              <div class="field mb-4 col-12"><label for="bio" class="font-medium text-900">Bio</label><textarea
-                id="bio" type="text" pinputtextarea="" rows="5"
-                class="p-inputtextarea p-inputtext p-component p-element p-inputtextarea-resizable"
-                style="height: 107px; overflow: hidden;"></textarea></div>
-              <div class="field mb-4 col-12 md:col-6"><label for="email"
-                                                             class="font-medium text-900">Email</label><input
-                id="email" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
-              <div class="field mb-4 col-12 md:col-6"><label for="country"
-                                                             class="font-medium text-900">Country</label>
-                <p-dropdown inputid="country" optionlabel="name" filterby="name" placeholder="Select a Country"
-                            class="p-element p-inputwrapper">
-                  <div class="p-dropdown p-component p-dropdown-clearable">
-                    <div class="p-hidden-accessible"><input type="text" readonly="" aria-haspopup="listbox"
-                                                            pautofocus="" role="combobox" class="p-element"
-                                                            id="country" placeholder="Select a Country"
-                                                            aria-expanded="false"></div><!----><span
-                    class="p-dropdown-label p-inputtext p-placeholder ng-star-inserted">Select a Country</span>
+              <div class="field mb-4 col-12"><label class="font-medium text-900">Avatar</label>
+                <p-fileUpload
+                  name="myfile[]"
+                  styleclass="p-button-outlined p-button-plain" chooselabel="Upload Image"
+                  class="p-element"
+                  accept="image/*">
+                </p-fileUpload>
 
-                    <div role="button" aria-label="dropdown trigger" aria-haspopup="listbox"
-                         class="p-dropdown-trigger"><span class="p-dropdown-trigger-icon pi pi-chevron-down"></span>
+                <div class="p-fileupload p-fileupload-basic p-component ng-star-inserted">
+                  <p-messages class="p-element ng-tns-c42-101 ng-star-inserted">
+                    <div role="alert" class="p-messages p-component ng-tns-c42-101">
                     </div>
-                    <p-overlay class="p-element ng-tns-c18-100 ng-star-inserted"><!----></p-overlay>
-                  </div>
-                </p-dropdown>
-              </div>
-              <div class="field mb-4 col-12 md:col-6"><label for="city"
-                                                             class="font-medium text-900">City</label><input
-                id="city" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
-              <div class="field mb-4 col-12 md:col-6"><label for="state"
-                                                             class="font-medium text-900">State</label><input
-                id="state" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
-              <div class="field mb-4 col-12"><label for="website" class="font-medium text-900">Website</label>
-                <div class="p-inputgroup"><span class="p-inputgroup-addon">www</span><input id="website" type="text"
-                                                                                            pinputtext=""
-                                                                                            class="p-inputtext p-component p-element">
+                  </p-messages>
                 </div>
-              </div>
-              <div class="col-12">
-                <button pbutton="" pripple="" label="Create User"
-                        class="p-element p-ripple w-auto mt-3 p-button p-component"><span class="p-button-label">Create User</span><span
-                  class="p-ink"></span></button>
+                <div class="field mb-4 col-12"><label for="bio" class="font-medium text-900">Bio</label><textarea
+                  id="bio" type="text" pinputtextarea="" rows="5"
+                  class="p-inputtextarea p-inputtext p-component p-element p-inputtextarea-resizable"
+                  style="height: 107px; overflow: hidden;"></textarea></div>
+                <div class="field mb-4 col-12 md:col-6"><label for="email"
+                                                               class="font-medium text-900">Email</label><input
+                  id="email" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+                <div class="field mb-4 col-12 md:col-6"><label for="country"
+                                                               class="font-medium text-900">Country</label>
+                  <p-dropdown inputid="country" optionlabel="name" filterby="name" placeholder="Select a Country"
+                              class="p-element p-inputwrapper">
+                    <div class="p-dropdown p-component p-dropdown-clearable">
+                      <div class="p-hidden-accessible"><input type="text" readonly="" aria-haspopup="listbox"
+                                                              pautofocus="" role="combobox" class="p-element"
+                                                              id="country" placeholder="Select a Country"
+                                                              aria-expanded="false"></div><!----><span
+                      class="p-dropdown-label p-inputtext p-placeholder ng-star-inserted">Select a Country</span>
+
+                      <div role="button" aria-label="dropdown trigger" aria-haspopup="listbox"
+                           class="p-dropdown-trigger"><span class="p-dropdown-trigger-icon pi pi-chevron-down"></span>
+                      </div>
+                      <p-overlay class="p-element ng-tns-c18-100 ng-star-inserted"><!----></p-overlay>
+                    </div>
+                  </p-dropdown>
+                </div>
+                <div class="field mb-4 col-12 md:col-6"><label for="city"
+                                                               class="font-medium text-900">City</label><input
+                  id="city" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+                <div class="field mb-4 col-12 md:col-6"><label for="state"
+                                                               class="font-medium text-900">State</label><input
+                  id="state" type="text" pinputtext="" class="p-inputtext p-component p-element"></div>
+                <div class="field mb-4 col-12"><label for="website" class="font-medium text-900">Website</label>
+                  <div class="p-inputgroup"><span class="p-inputgroup-addon">www</span><input id="website" type="text"
+                                                                                              pinputtext=""
+                                                                                              class="p-inputtext p-component p-element">
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button pbutton="" pripple="" label="Create User"
+                          class="p-element p-ripple w-auto mt-3 p-button p-component"><span class="p-button-label">Create User</span><span
+                    class="p-ink"></span></button>
+                </div>
               </div>
             </div>
           </div>

@@ -10,7 +10,6 @@ import {map, tap} from "rxjs/operators";
 })
 export class ListUsersComponent implements OnInit {
 
-
   customers!: Customer[];
 
   representatives!: Representative[];
@@ -76,11 +75,11 @@ export class ListUsersComponent implements OnInit {
     // ];
   }
 
-  clear(table: Table) {
+  public clear(table: Table) {
     table.clear();
   }
 
-  getSeverity(status: string): any {
+  public getSeverity(status: string): any {
      switch (status.toLowerCase()) {
       case 'unqualified':
         return 'danger';

@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AddUsersRoutingModule } from './add-users-routing.module';
 import { AddUsersComponent } from './add-users.component';
 import { TableModule } from 'primeng/table';
-import { FileUploadModule } from 'primeng/fileupload';
+import { FileUploadModule } from "primeng/fileupload";
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { ToastModule } from 'primeng/toast';

@@ -1,8 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {MessageService} from "primeng/api";
-import {Product} from "../../../api/product";
+import {User} from "../../../api/user";
 import {Table} from "primeng/table";
-import {ProductService} from "../../../services/product.service";
+import {UserService} from "../../../services/user.service";
 
 
 @Component({
@@ -11,17 +11,17 @@ import {ProductService} from "../../../services/product.service";
 })
 export class AddUsersComponent implements OnInit {
 
-    productDialog: boolean = false;
+    userDialog: boolean = false;
 
-    deleteProductDialog: boolean = false;
+    deleteUserDialog: boolean = false;
 
-    deleteProductsDialog: boolean = false;
+    deleteUsersDialog: boolean = false;
 
-    products: Product[] = [];
+    users: User[] = [];
 
-    product: Product = {};
+    user: User = new User();
 
-    selectedProducts: Product[] = [];
+    selectedUsers: User[] = [];
 
     submitted: boolean = false;
 
@@ -31,13 +31,13 @@ export class AddUsersComponent implements OnInit {
 
     rowsPerPageOptions = [5, 10, 20];
 
-    constructor(private productService: ProductService, private messageService: MessageService) { }
+    constructor(private userService: UserService, private messageService: MessageService) { }
 
     ngOnInit() {
-     //   this.productService.getProducts().then(data => this.products = data);
+     //   this.userService.getUsers().then(data => this.users = data);
 
         this.cols = [
-            { field: 'product', header: 'Product' },
+            { field: 'user', header: 'User' },
             { field: 'price', header: 'Price' },
             { field: 'category', header: 'Category' },
             { field: 'rating', header: 'Reviews' },
@@ -52,73 +52,73 @@ export class AddUsersComponent implements OnInit {
     }
 
     openNew() {
-        this.product = {};
+        this.user = new User();
         this.submitted = false;
-        this.productDialog = true;
+        this.userDialog = true;
     }
 
-    deleteSelectedProducts() {
-        this.deleteProductsDialog = true;
+    deleteSelectedUsers() {
+        this.deleteUsersDialog = true;
     }
 
-    editProduct(product: Product) {
-        this.product = { ...product };
-        this.productDialog = true;
+    editUser(user: User) {
+        this.user = { ...user };
+        this.userDialog = true;
     }
 
-    deleteProduct(product: Product) {
-        this.deleteProductDialog = true;
-        this.product = { ...product };
+    deleteUser(user: User) {
+        this.deleteUserDialog = true;
+        this.user = { ...user };
     }
 
     confirmDeleteSelected() {
-        this.deleteProductsDialog = false;
-        this.products = this.products.filter(val => !this.selectedProducts.includes(val));
-        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
-        this.selectedProducts = [];
+        this.deleteUsersDialog = false;
+        this.users = this.users.filter(val => !this.selectedUsers.includes(val));
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Users Deleted', life: 3000 });
+        this.selectedUsers = [];
     }
 
     confirmDelete() {
-        this.deleteProductDialog = false;
-        this.products = this.products.filter(val => val.id !== this.product.id);
-        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
-        this.product = {};
+        this.deleteUserDialog = false;
+        this.users = this.users.filter(val => val.id !== this.user.id);
+        this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'User Deleted', life: 3000 });
+        this.user = new User();
     }
 
     hideDialog() {
-        this.productDialog = false;
+        this.userDialog = false;
         this.submitted = false;
     }
 
-    saveProduct() {
+    saveUser() {
         this.submitted = true;
 
-        if (this.product.name?.trim()) {
-            if (this.product.id) {
+        if (this.user.firstName?.trim()) {
+            if (this.user.id) {
                 // @ts-ignore
-                this.product.inventoryStatus = this.product.inventoryStatus.value ? this.product.inventoryStatus.value : this.product.inventoryStatus;
-                this.products[this.findIndexById(this.product.id)] = this.product;
-                this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
+                this.user.inventoryStatus = this.user.inventoryStatus.value ? this.user.inventoryStatus.value : this.user.inventoryStatus;
+                this.users[this.findIndexById(this.user.id)] = this.user;
+                this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'User Updated', life: 3000 });
             } else {
-                this.product.id = this.createId();
-                this.product.code = this.createId();
-                this.product.image = 'product-placeholder.svg';
+                this.user.id = this.createId();
+                // this.user.code = this.createId();
+                // this.user.image = 'user-placeholder.svg';
                 // @ts-ignore
-                this.product.inventoryStatus = this.product.inventoryStatus ? this.product.inventoryStatus.value : 'INSTOCK';
-                this.products.push(this.product);
-                this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
+                this.user.inventoryStatus = this.user.inventoryStatus ? this.user.inventoryStatus.value : 'INSTOCK';
+                this.users.push(this.user);
+                this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'User Created', life: 3000 });
             }
 
-            this.products = [...this.products];
-            this.productDialog = false;
-            this.product = {};
+            this.users = [...this.users];
+            this.userDialog = false;
+            this.user = new User();
         }
     }
 
     findIndexById(id: string): number {
         let index = -1;
-        for (let i = 0; i < this.products.length; i++) {
-            if (this.products[i].id === id) {
+        for (let i = 0; i < this.users.length; i++) {
+            if (this.users[i].id === id) {
                 index = i;
                 break;
             }
