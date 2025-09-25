@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {JobCandidatesService} from "./job-candidates.service";
-import { JobCandidate } from 'src/app/core/models/job-candidate.model';
+import { JobCandidate } from '../../core/models/job-candidate.model';
 
 
 @Component({

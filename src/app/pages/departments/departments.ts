@@ -10,7 +10,6 @@ import { InputTextModule } from 'primeng/inputtext';
 import { Table, TableModule } from 'primeng/table';
 import { Toolbar } from 'primeng/toolbar';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { Department } from './department.model';
 import { DepartmentsService } from './departments.service';
 import { tap } from 'rxjs';
 import { DatePickerModule } from 'primeng/datepicker';
@@ -34,6 +33,7 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ListboxModule } from 'primeng/listbox';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { TextareaModule } from 'primeng/textarea';
+import { Department } from '../../core/models/department.model';
 
 interface Column {
     field: string;

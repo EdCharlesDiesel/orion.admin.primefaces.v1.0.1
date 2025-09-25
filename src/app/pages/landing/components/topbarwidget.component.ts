@@ -25,7 +25,7 @@ import { ButtonModule } from 'primeng/button';
                     />
                 </g>
             </svg>
-            <span class="text-surface-900 dark:text-surface-0 font-medium text-2xl leading-normal mr-20">SAKAI</span>
+            <span class="text-surface-900 dark:text-surface-0 font-medium text-2xl leading-normal mr-20">ORION</span>
         </a>
 
         <a pButton [text]="true" severity="secondary" [rounded]="true" pRipple class="lg:!hidden" pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
@@ -51,7 +51,7 @@ import { ButtonModule } from 'primeng/button';
                 </li>
                 <li>
                     <a (click)="router.navigate(['/landing'], { fragment: 'pricing' })" pRipple class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
-                        <span>Pricing</span>
+                        <span>Price List</span>
                     </a>
                 </li>
             </ul>

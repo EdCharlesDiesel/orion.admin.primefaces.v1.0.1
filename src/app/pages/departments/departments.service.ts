@@ -1,10 +1,10 @@
 import { catchError, Observable, of, shareReplay, tap } from 'rxjs';
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Department } from './department.model';
 import { HttpErrorService } from '../../shared/http-error.service';
 import { Result } from 'postcss';
 import { map } from 'rxjs/operators';
+import { Department } from '../../core/models/department.model';
 
 @Injectable({
     providedIn: 'root'

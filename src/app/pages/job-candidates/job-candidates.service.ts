@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { JobCandidate } from 'src/app/core/models/job-candidate.model';
+import { JobCandidate } from '../../core/models/job-candidate.model';
 
 
 @Injectable({
@@ -11,7 +11,7 @@ export class JobCandidatesService {
   private apiUrl = 'http://localhost:9010/api/JobCandidate';
 
   constructor(private http: HttpClient) {}//localhost:9010/
-  //TODO: Need to fix Not recommnded hence I need to start using Guid to begin with.
+  //TODO: Need to fix Not recommended hence I need to start using Guid to begin with.
   private tempId = 100;
   createJobCandidate(data: JobCandidate): Observable<JobCandidate> {
     data.businessEntityID = ++this.tempId; // negative IDs as temp placeholders
